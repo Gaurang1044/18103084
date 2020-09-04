@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Question3 {
+public class Question1_3 {
 
     public static void main(String[] args) {
 
@@ -22,7 +22,7 @@ public class Question3 {
         int e = in.nextInt();
         System.out.println("Enter Dimesions of Edges In Format : From To Weight (0 Indexed)");
         for (int i = 0; i < e; i++) {
-            System.out.print("Edge " + (i + 1) +" : ");
+            System.out.print("Edge " + (i + 1) + " : ");
             int from = in.nextInt();
             int to = in.nextInt();
             int w = in.nextInt();
@@ -49,7 +49,7 @@ public class Question3 {
                 dist.set(to, Math.min(dist.get(to), dist.get(from) + w));
             }
             // for (int x = 0; x < n; x++) {
-            //     System.out.print(dist.get(x) + " ");
+            // System.out.print(dist.get(x) + " ");
             // }
             // System.out.println();
         }
@@ -71,16 +71,16 @@ public class Question3 {
         if (!x)
             System.out.println("Negative Cycle Exists");
         else {
-            System.out.println("Shortest Distance from Source to Destination : " +dist.get(d));
+            System.out.println("Shortest Distance from Source to Destination : " + dist.get(d));
             System.out.println();
-            for(int i=0;i<n;i++){
+            for (int i = 0; i < n; i++) {
                 String out = Integer.toString(dist.get(i));
-                
-                if(dist.get(i) >=Integer.MAX_VALUE/2)
+
+                if (dist.get(i) >= Integer.MAX_VALUE / 2)
                     out = "NULL";
-                System.out.println(String.format("Shortest Distance from Vertex %1$s to Vertex %2$s : " +out,s,i));
-             }
+                System.out.println(String.format("Shortest Distance from Vertex %1$s to Vertex %2$s : " + out, s, i));
             }
+        }
         in.close();
     }
 }

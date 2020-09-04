@@ -1,15 +1,14 @@
 import java.util.Scanner;
 import java.util.HashMap;
 
-
-public class Question1 {
+public class Question1_1 {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		System.out.print("Enter The string : ");
 		String s = in.nextLine();
 		System.out.print("Enter The substring : ");
-		
+
 		String sub = in.nextLine();
 		HashMap<Character, Integer> arr = new HashMap<Character, Integer>();
 		HashMap<Character, Integer> brr = new HashMap<Character, Integer>();
