@@ -1,3 +1,5 @@
+package Assignment3;
+
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -17,7 +19,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class Crawler {
-    private static final Boolean MODE_APPEND = true;
+    // private static final Boolean MODE_APPEND = true;
     private Queue<String> queue;
     private final String USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36";
     private HashSet<String> links_set;
