@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Question5_3</title>
+</head>
+
+<body>
+    <form>
+        <h2>Enter the string to be checked in the box below </h2>
+        <input type="text" class="textbox" name="string">
+        <input type="submit" value="Check" id="Button" onclick="checkString()">
+    </form>
+</body>
+<script>
+    function checkString() {
+        var input_string = document.getElementsByClassName("textbox")[0].value;
+        let stack = [];
+        var is_valid = true;
+        for (var i = 0; i < input_string.length; i++) {
+            var ch = input_string[i];
+            if (ch === '[' || ch === '{' || ch === '(') {
+                stack.push(ch);
+            } else if (ch == ']') {
+                if (stack.length == 0 || stack[stack.length - 1] != '[') {
+                    is_valid = false;
+                    break;
+                } else {
+                    stack.pop();
+                }
+            } else if (ch == '}') {
+                if (stack.length == 0 || stack[stack.length - 1] != '{') {
+                    is_valid = false;
+                    break;
+                } else {
+                    stack.pop();
+                }
+            } else if (ch == ')') {
+                if (stack.length == 0 || stack[stack.length - 1] != '(') {
+                    is_valid = false;
+                    break;
+                } else {
+                    stack.pop();
+                }
+            }
+        }
+        if (!is_valid || stack.length > 0) {
+            alert(input_string + " is Not Valid");
+        } else {
+            alert(input_string + " is Valid");
+        }
+
+    }
+</script>
+
+</html>

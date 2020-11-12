@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Question5_4</title>
+</head>
+
+<script>
+    function treeCreator() {
+        var rows = document.getElementById("rows").value;
+        
+       var output = '<div style="display: flex; justify-content: center; margin:50px;font-family:Courier,sans-serif;">';
+        for (let i = 0; i < rows; i++) {
+
+            for (let j = 0; j < rows - i; j++) {
+                output += '&nbsp;';
+            }
+            if (i == 0) {
+                output += '*';
+            } else {
+                for (let j = 0; j <= i*2; j++) {
+                    output += '0';
+                }
+            }
+            output += '<br>'
+        }
+    balk= Math.floor(rows/2);
+    if(rows%2==1){
+        balk= Math.ceil(rows/2);
+    
+    }
+        for (let i = 0; i < Math.floor(rows/2); ++i) {
+            for (let j = 0; j < rows-Math.floor((balk)/2); ++j) {
+                output += '&nbsp;';
+            }
+            
+            for (let j = 0; j < balk; ++j) {
+                output += '0';
+            }
+            output += '<br>';
+        }
+        output += '</div>';
+        document.write(output);
+    }
+</script>
+
+<body>
+        <label>Enter no of rows : </label>
+        <input required type="number" id="rows" name="rows">
+        <input type="submit" value="Generate Tree" onclick="treeCreator()">
+  
+</body>
+<style>
+    div {
+        font-family: Courier, sans-serif;
+    }
+</style>
+
+</html>
